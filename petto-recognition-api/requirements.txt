@@ -3,3 +3,4 @@ uvicorn==0.22.0
 pandas==2.1.0
 numpy==1.25.2
 tensorflow==2.14.0
+gdown==4.7.1
