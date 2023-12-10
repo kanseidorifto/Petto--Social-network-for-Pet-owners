@@ -24,7 +24,7 @@ body {
 	overflow-y: auto;
 	max-height: 100vh;
 	display: flex;
-	z-index: 10;
+	z-index: 60;
 }
 
 .ReactModal__Overlay--after-open {

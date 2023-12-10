@@ -41,7 +41,7 @@ const PetCard = ({ _id, profileId, openUpdateModal }) => {
 							type="button"
 							onClick={() => setOpenPetPopup(true)}
 							className="absolute top-0 right-0 m-2">
-							<EllipsisVerticalIcon className="w-8 h-8 text-violet-700" />
+							<EllipsisVerticalIcon className="w-8 h-8 rounded-xl text-amber-500 bg-violet-600/40" />
 						</button>
 					}
 					open={openPetPopup}
