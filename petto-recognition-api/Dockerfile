@@ -9,14 +9,14 @@ COPY requirements.txt /app/
 # Install any needed packages specified in requirements.txt
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
-# Download animal recognitinion model
-RUN gdown 18rubllZ3J2UdbmE0vqKRQm_lfsjrDXmi -O ./models/animal_species_recognition_model.h5
+# Download animal recognition model
+RUN gdown "https://drive.google.com/uc?id=18rubllZ3J2UdbmE0vqKRQm_lfsjrDXmi" -O models/animal_species_recognition_model.h5
 
-# Download cat recognitinion model
-RUN gdown 1_khsxtYF0RkBzqRz4gXjVvKzZdootFlW -O ./models/cat_breed_recognition_model.h5
+# Download cat recognition model
+RUN gdown "https://drive.google.com/uc?id=1_khsxtYF0RkBzqRz4gXjVvKzZdootFlW" -O models/cat_breed_recognition_model.h5
 
-# Download dog recognitinion model
-RUN gdown 1--Obgd-umEmNDJaP6i5ZFS4ICTOzJdUt -O ./models/dog_breed_recognition_model.h5
+# Download dog recognition model
+RUN gdown "https://drive.google.com/uc?id=1--Obgd-umEmNDJaP6i5ZFS4ICTOzJdUt" -O models/dog_breed_recognition_model.h5
 
 # Copy the current directory contents into the container at /app
 COPY . /app/
