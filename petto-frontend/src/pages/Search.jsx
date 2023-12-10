@@ -23,6 +23,7 @@ const Search = () => {
 				break;
 		}
 		document.title = 'Petto - Пошук ' + tab;
+		window.scrollTo(0, 0);
 		return () => {
 			document.title = 'Petto';
 		};

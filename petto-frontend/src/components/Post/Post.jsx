@@ -74,7 +74,7 @@ const Post = ({ _id, profileId }) => {
 
 	return (
 		<section className="text-white rounded-md bg-violet-400">
-			<div className="flex items-center px-6 py-4 space-x-2">
+			<div className="flex items-center px-3 py-3 space-x-2 sm:px-6 sm:py-4">
 				<Link to={'/profile/' + profile?._id} className="font-black">
 					<img
 						src={profile?.avatarUrl}
@@ -120,11 +120,11 @@ const Post = ({ _id, profileId }) => {
 						{mediaLocations.map((media, index) => (
 							<div key={media} className="relative group/item">
 								<img className="select-none" src={media} alt={`postImage ${index}`} />
-								<div className="absolute invisible top-0 w-full -translate-y-1 opacity-0 group-hover/item:visible group-hover/item:translate-y-1 group-hover/item:opacity-100 transition-all ease-in-out">
+								<div className="absolute top-0 invisible w-full transition-all ease-in-out -translate-y-1 opacity-0 group-hover/item:visible group-hover/item:translate-y-1 group-hover/item:opacity-100">
 									<button
 										onClick={() => openModal({ picUrl: media })}
 										className="bg-amber-500/70 hover:bg-amber-500/50 m-2 p-0.5 rounded-md mx-auto z-10">
-										<ViewfinderCircleIcon className="h-10 w-10 text-white leading-none" />
+										<ViewfinderCircleIcon className="w-10 h-10 leading-none text-white" />
 									</button>
 								</div>
 							</div>
@@ -132,7 +132,7 @@ const Post = ({ _id, profileId }) => {
 					</Carousel>
 				)}
 			</div>
-			<div className="px-6 py-4 space-y-3">
+			<div className="px-3 py-2 space-y-3 sm:px-6 sm:py-4">
 				<div>
 					<Link to={'/profile/' + profile?._id} className="font-black">
 						<span className="font-black">{profile.givenName + ' ' + profile.surname}</span>
@@ -202,7 +202,7 @@ const Post = ({ _id, profileId }) => {
 				<div className="flex items-center space-x-2">
 					<img src={userInfo?.avatarUrl} alt="avatar" className="w-10 h-10 bg-white rounded-full" />
 					<TextareaAutosize
-						className="flex-1 p-1 text-base bg-transparent rounded appearance-none resize-none transition-colors  placeholder:text-white placeholder:font-light hover:bg-violet-300/20 focus:bg-violet-300/50 focus:outline-none focus:border-none focus:ring-none"
+						className="flex-1 p-1 text-base transition-colors bg-transparent rounded appearance-none resize-none placeholder:text-white placeholder:font-light hover:bg-violet-300/20 focus:bg-violet-300/50 focus:outline-none focus:border-none focus:ring-none"
 						value={commentText}
 						onChange={(e) => setCommentText(e.target.value)}
 						onKeyDown={(e) => {
@@ -215,7 +215,7 @@ const Post = ({ _id, profileId }) => {
 					/>
 					<button
 						onClick={handleSendComment}
-						className="p-2 text-base font-medium transition-colors rounded-md text-violet-100 bg-violet-300/20 shadow hover:bg-violet-300/50">
+						className="p-2 text-base font-medium transition-colors rounded-md shadow text-violet-100 bg-violet-300/20 hover:bg-violet-300/50">
 						Опублікувати
 					</button>
 				</div>

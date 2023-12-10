@@ -111,7 +111,7 @@ const FriendRequestList = () => {
 				/>
 			</div>
 			<div className="px-4 py-2 space-y-2 text-white">
-				<div className="px-3 py-2 space-x-2">
+				<div className="flex gap-2 px-3 py-2 max-sm:flex-col">
 					<button
 						onClick={() => setActiveTab(0)}
 						className={
@@ -146,13 +146,13 @@ const FriendRequestList = () => {
 											<Link className="inline-block" to={`/profile/${friend._id}`}>
 												<p>{friend.givenName + ' ' + friend.surname}</p>
 											</Link>
-											<div className="flex flex-wrap items-center">
+											<div className="flex gap-2 max-sm:flex-col sm:items-center">
 												<Link
 													to={`/profile/${friend._id}`}
 													className="text-neutral-300 hover:underline">
 													Переглянути профіль
 												</Link>
-												<div className="flex items-center px-4 space-x-2">
+												<div className="flex items-center gap-2 px-4">
 													{activeTab === 0 && (
 														<button
 															onClick={() => handleAcceptRequest(friend)}
@@ -162,7 +162,7 @@ const FriendRequestList = () => {
 													)}
 													<button
 														onClick={() => handleCancelRequest(friend, activeTab === 0)}
-														className="leading-none text-violet-700 hover:underline">
+														className="p-1 leading-none text-white transition-colors rounded-md hover:underline hover:bg-violet-300 bg-violet-300/50">
 														Відхилити запит
 													</button>
 												</div>

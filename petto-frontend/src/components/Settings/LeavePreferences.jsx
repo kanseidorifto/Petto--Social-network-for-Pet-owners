@@ -17,8 +17,8 @@ const LeavePreferences = () => {
 	return (
 		<main className="px-6 py-4 text-white rounded-md bg-violet-400">
 			<div className="flex flex-col">
-				<div className="grid grid-cols-3 gap-6 p-3">
-					<div className="self-center text-right">
+				<div className="grid items-center justify-center grid-cols-1 gap-6 p-3 justify-items-center sm:grid-cols-3">
+					<div className="self-center sm:text-right">
 						<p>Вийти з облікового запису?</p>
 					</div>
 					<div className="col-span-2">

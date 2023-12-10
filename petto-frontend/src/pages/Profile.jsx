@@ -24,6 +24,7 @@ const Profile = () => {
 			(!own && profileInfo.isSuccess
 				? profileInfo.data.givenName + ' ' + profileInfo.data.surname
 				: '');
+		window.scrollTo(0, 0);
 		return () => {
 			document.title = 'Petto';
 		};
@@ -56,7 +57,7 @@ const Profile = () => {
 							<button
 								onClick={openModal}
 								className="rounded-full leading-none font-semibold text-base py-1.5 px-2.5 bg-amber-500">
-								Створити новий допис
+								Новий допис
 							</button>
 						)}
 					</div>
@@ -71,7 +72,7 @@ const Profile = () => {
 						</div>
 						<div className="p-4 space-y-4">
 							{profilePetList.data.length > 0 ? (
-								<div className="grid grid-cols-[1fr,1fr] gap-4 justify-items-center">
+								<div className="grid sm:grid-cols-[1fr,1fr] gap-4 justify-items-center">
 									{profilePetList.data.slice(0, 4).map((pet) => (
 										<ProfilePetCard key={pet._id} {...pet} />
 									))}
@@ -84,7 +85,7 @@ const Profile = () => {
 							<div className="text-center">
 								<Link
 									to={`/pets?userId=${profileId}`}
-									className="w-64 bg-violet-600 text-white text-xs leading-none p-2.5 rounded-xl">
+									className="w-64 bg-violet-600 text-white text-sm leading-none p-2.5 rounded-xl">
 									Переглянути більше
 								</Link>
 							</div>

@@ -8,7 +8,7 @@ const FriendListLayout = () => {
 	return (
 		<div>
 			<Header />
-			<div className="container flex max-md:flex-col-reverse mx-auto my-4 gap-4">
+			<div className="container flex gap-4 mx-auto my-4 max-md:px-4 max-md:flex-col-reverse">
 				<div className="max-md:hidden">
 					<SidebarMain />
 				</div>

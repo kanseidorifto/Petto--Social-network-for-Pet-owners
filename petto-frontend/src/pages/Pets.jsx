@@ -10,6 +10,7 @@ import UpdatePetModal from '../components/Pets/UpdatePetModal';
 const Pets = () => {
 	useEffect(() => {
 		document.title = 'Petto - Улюбленці';
+		window.scrollTo(0, 0);
 		return () => {
 			document.title = 'Petto';
 		};

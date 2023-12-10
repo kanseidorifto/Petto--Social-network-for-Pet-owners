@@ -7,6 +7,7 @@ import LeavePreferences from '../components/Settings/LeavePreferences';
 const Settings = () => {
 	useEffect(() => {
 		document.title = 'Petto - Налаштування';
+		window.scrollTo(0, 0);
 		return () => {
 			document.title = 'Petto';
 		};

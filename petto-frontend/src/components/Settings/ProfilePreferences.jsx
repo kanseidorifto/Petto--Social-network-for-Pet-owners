@@ -67,9 +67,9 @@ const ProfilePreferences = () => {
 	};
 
 	return (
-		<main className="px-6 py-4 text-white rounded-md bg-violet-400">
+		<main className="px-2 py-2 text-white rounded-md sm:px-6 sm:py-4 bg-violet-400">
 			<form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
-				<div className="grid grid-cols-3 gap-6 p-3">
+				<div className="grid grid-cols-3 gap-6 p-1">
 					<div className="self-center text-right">
 						<p>Фото</p>
 					</div>
@@ -90,16 +90,16 @@ const ProfilePreferences = () => {
 						</button>
 					</div>
 				</div>
-				<div className="grid grid-cols-3 gap-6 p-3">
+				<div className="grid grid-cols-3 gap-6 p-1 sm:p-3">
 					<div className="self-center text-right">
 						<p>Обкладинка профілю</p>
 					</div>
-					<div className="relative col-span-2 w-full md:w-64">
+					<div className="relative w-full col-span-2 md:w-64">
 						{(profile.data.coverUrl !== '' || newCover) && (
 							<img
 								src={newCover ? newCover : profile.data.coverUrl}
 								alt="Header"
-								className="object-contain rounded-md w-full bg-violet-700"
+								className="object-contain w-full rounded-md bg-violet-700"
 							/>
 						)}
 						<div className="shadow-[inset_0_0_20px_10px_rgba(0,0,0,0.25)] rounded-md w-full h-full top-0 bottom-0 absolute"></div>
@@ -111,7 +111,7 @@ const ProfilePreferences = () => {
 						</button>
 					</div>
 				</div>
-				<div className="grid grid-cols-3 gap-6 p-3">
+				<div className="grid grid-cols-3 gap-6 p-1 sm:p-3">
 					<div className="self-center text-right">
 						<p>Ім&apos;я</p>
 					</div>
@@ -120,11 +120,11 @@ const ProfilePreferences = () => {
 							type="text"
 							defaultValue={profile.data.givenName}
 							{...register('givenName', { required: "Введіть своє ім'я" })}
-							className="px-2 py-2 bg-transparent border rounded-md border-violet-700 focus:outline-none focus:ring-violet-800 focus:border-violet-800"
+							className="max-w-full px-2 py-2 bg-transparent border rounded-md border-violet-700 focus:outline-none focus:ring-violet-800 focus:border-violet-800"
 						/>
 					</div>
 				</div>
-				<div className="grid grid-cols-3 gap-6 p-3">
+				<div className="grid grid-cols-3 gap-6 p-1 sm:p-3">
 					<div className="self-center text-right">
 						<p>Прізвище</p>
 					</div>
@@ -133,11 +133,11 @@ const ProfilePreferences = () => {
 							type="text"
 							defaultValue={profile.data.surname}
 							{...register('surname', { required: 'Введіть своє прізвище' })}
-							className="px-2 py-2 bg-transparent border rounded-md border-violet-700 focus:outline-none focus:ring-violet-800 focus:border-violet-800"
+							className="max-w-full px-2 py-2 bg-transparent border rounded-md border-violet-700 focus:outline-none focus:ring-violet-800 focus:border-violet-800"
 						/>
 					</div>
 				</div>
-				<div className="grid grid-cols-3 gap-6 p-3">
+				<div className="grid grid-cols-3 gap-6 p-1 sm:p-3">
 					<div className="self-center text-right">
 						<p>Біографія</p>
 					</div>
@@ -146,7 +146,7 @@ const ProfilePreferences = () => {
 							type="text"
 							defaultValue={profile.data.bio}
 							{...register('bio')}
-							className="px-2 py-2 bg-transparent border rounded-md border-violet-700 focus:outline-none focus:ring-violet-800 focus:border-violet-800"
+							className="max-w-full px-2 py-2 bg-transparent border rounded-md border-violet-700 focus:outline-none focus:ring-violet-800 focus:border-violet-800"
 						/>
 					</div>
 				</div>

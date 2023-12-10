@@ -13,6 +13,7 @@ const PetProfile = () => {
 	useEffect(() => {
 		document.title =
 			'Petto - Профіль ' + (petProfileInfo.isSuccess ? petProfileInfo.data.givenName : '');
+		window.scrollTo(0, 0);
 		return () => {
 			document.title = 'Petto';
 		};
@@ -39,7 +40,7 @@ const PetProfile = () => {
 					</div>
 				</main>
 				<div>
-					<aside className="text-white rounded-md md:w-96  bg-violet-400">
+					<aside className="text-white rounded-md md:w-96 bg-violet-400">
 						{/* <div className="flex items-center justify-between px-6 py-4 text-white bg-violet-500 rounded-t-md">
 							<h2 className="text-base font-medium">Улюбленець</h2>
 						</div> */}
@@ -50,7 +51,7 @@ const PetProfile = () => {
 								className="object-cover w-full h-full rounded-t-md"
 							/>
 						</div>
-						<div className="text-center flex flex-col gap-2 md:gap-4 p-3 max-w-full">
+						<div className="flex flex-col max-w-full gap-2 p-3 text-center md:gap-4">
 							<p className="text-xl font-semibold">{petProfileInfo.data.givenName}</p>
 							<p className="text-base">
 								Порода: <span className="font-semibold">{petProfileInfo.data.breed}</span>
@@ -59,7 +60,7 @@ const PetProfile = () => {
 								Вік: <span className="font-semibold">{formatYears(petProfileInfo.data.age)}</span>
 							</p>
 							{petProfileInfo.data.bio.length > 0 && (
-								<p className="text-base max-w-full">
+								<p className="max-w-full text-base">
 									Біографія: <span className="font-semibold">{petProfileInfo.data.bio}</span>
 								</p>
 							)}
@@ -67,7 +68,7 @@ const PetProfile = () => {
 								Власник:{' '}
 								<Link
 									to={`/profile/${petProfileInfo.data.owner._id}`}
-									className="bg-amber-500 p-1 shadow-sm rounded-md font-semibold hover:underline">
+									className="p-1 font-semibold rounded-md shadow-sm bg-amber-500 hover:underline">
 									{petProfileInfo.data.owner.givenName + ' ' + petProfileInfo.data.owner.surname}
 								</Link>
 							</p>

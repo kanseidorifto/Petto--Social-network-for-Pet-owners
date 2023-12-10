@@ -47,7 +47,7 @@ const Feed = () => {
 				{activeTab === 1 && <AllPostList />}
 			</main>
 			<div>
-				<aside className="inline-block w-full lg:w-64 text-white rounded-md bg-violet-400">
+				<aside className="inline-block w-full text-white rounded-md lg:w-64 bg-violet-400">
 					<nav>
 						<ul className="p-3 space-y-3 text-base leading-none">
 							{options.map((option, index) => (
