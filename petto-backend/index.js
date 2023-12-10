@@ -22,14 +22,15 @@ mongoose
 	.then(() => console.log('DB OK!'))
 	.catch((err) => console.error('DB Error!', err));
 
+const corsOptions = {
+	origin: '*',
+	methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+	allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
-app.use(
-	cors({
-		origin: '*',
-		methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
-		allowedHeaders: ['Content-Type', 'Access-Control-Allow-Origin', 'Authorization'],
-	}),
-);
 app.use('/uploads', express.static('uploads'));
 
 // endpoints
@@ -45,6 +46,10 @@ app.use((error, req, res, next) => {
 	// generic handler
 	res.status(error.status || 500).json({ message: error.message || 'Server error' });
 });
+
+// Options request handler
+app.options('*', cors(corsOptions));
+
 // run
 app.listen(PORT, (err) => {
 	if (err) {
