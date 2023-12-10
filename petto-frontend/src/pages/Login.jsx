@@ -47,12 +47,12 @@ const Login = () => {
 		setShowModal({ show: false });
 	};
 	return (
-		<div className="grid h-screen grid-cols-2 max-md:flex max-md:flex-col max-md:space-y-10">
-			<div className="flex-shrink my-auto space-y-3 text-center text-amber-400 text-pacifico">
-				<h1 className="text-9xl">Petto</h1>
-				<p className="text-2xl">соц мережа для власників домашніх улюбленців</p>
+		<div className="grid h-screen grid-cols-2 gap-2 p-4 max-md:flex max-md:flex-col max-md:space-y-10">
+			<div className="flex flex-col my-auto space-y-1 text-center max-sm:justify-end max-sm:flex-1 sm:space-y-3 text-amber-400 text-pacifico">
+				<h1 className="text-9xl max-md:text-7xl">Petto</h1>
+				<p className="text-2xl max-md:text-xl">соц мережа для власників домашніх улюбленців</p>
 			</div>
-			<div className="flex-grow mx-auto my-auto">
+			<div className="mx-auto my-auto sm:flex-shrink">
 				<form
 					onSubmit={handleSubmit(onSubmit)}
 					className="flex flex-col p-6 space-y-4 border rounded-md border-amber-500">
@@ -82,6 +82,7 @@ const Login = () => {
 					</button>
 				</form>
 			</div>
+			<div className="flex-1 sm:hidden"></div>
 			<RegisterModal modalIsOpen={showModal} closeModal={closeModal} />
 		</div>
 	);
