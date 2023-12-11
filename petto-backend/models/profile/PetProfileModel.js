@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const PetProfileSchema = mongoose.Schema(
 	{
 		owner: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProfile', required: true },
-		givenName: { type: String, required: true, unique: true },
+		givenName: { type: String, required: true },
 		avatarUrl: { type: String, required: true },
 		breed: { type: String, required: true },
 		age: { type: Number, required: true },
