@@ -74,12 +74,14 @@ const ProfilePreferences = () => {
 						<p>Фото</p>
 					</div>
 					<div className="relative w-32 h-32 col-span-2">
-						{(profile.data.avatarUrl !== '' || newAvatar) && (
+						{profile.data.avatarUrl !== '' || newAvatar ? (
 							<img
 								src={newAvatar ? newAvatar : profile.data.avatarUrl}
 								alt="Avatar"
 								className="w-32 h-32 rounded-full max-w-none bg-violet-700"
 							/>
+						) : (
+							<div className="w-32 h-32 rounded-full max-w-none bg-violet-700"></div>
 						)}
 						<div className="rounded-full shadow-[inset_0_0_20px_10px_rgba(0,0,0,0.25)] w-full h-full top-0 bottom-0 absolute"></div>
 						<button
@@ -95,12 +97,14 @@ const ProfilePreferences = () => {
 						<p>Обкладинка профілю</p>
 					</div>
 					<div className="relative w-full col-span-2 md:w-64">
-						{(profile.data.coverUrl !== '' || newCover) && (
+						{profile.data.coverUrl !== '' || newCover ? (
 							<img
 								src={newCover ? newCover : profile.data.coverUrl}
 								alt="Header"
 								className="object-contain w-full rounded-md bg-violet-700"
 							/>
+						) : (
+							<div className="object-contain w-full rounded-md aspect-[3] bg-violet-700"></div>
 						)}
 						<div className="shadow-[inset_0_0_20px_10px_rgba(0,0,0,0.25)] rounded-md w-full h-full top-0 bottom-0 absolute"></div>
 						<button

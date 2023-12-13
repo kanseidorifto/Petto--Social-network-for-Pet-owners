@@ -51,7 +51,7 @@ const Profile = () => {
 			<ProfileHeader {...profileInfo.data} own={own} />
 			<div className="flex gap-4 max-lg:flex-col-reverse ">
 				<main className="flex-1">
-					<div className="flex items-center justify-between px-6 py-4 text-white bg-violet-500 rounded-t-md">
+					<div className="flex items-center justify-between px-6 py-3.5 text-white bg-violet-500 rounded-t-md">
 						<h2 className="text-base font-medium">Дописи</h2>
 						{own && (
 							<button
@@ -78,7 +78,7 @@ const Profile = () => {
 									))}
 								</div>
 							) : (
-								<p className="inline-block p-1.5 text-center text-white text-md">
+								<p className="inline-block w-full p-1.5 text-center text-white text-md">
 									Жодного улюбленця 😿
 								</p>
 							)}

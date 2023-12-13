@@ -38,6 +38,7 @@ const RegisterModal = ({ modalIsOpen, afterOpenModal, closeModal }) => {
 		console.log(values);
 		if (values.password !== values.repeatPassword) {
 			alert('Password mismatch');
+			return;
 		}
 		values.email = values.email.toLowerCase();
 		dispatch(registerUser(values));

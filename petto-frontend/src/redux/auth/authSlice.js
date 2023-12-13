@@ -38,6 +38,8 @@ const authSlice = createSlice({
 			state.success = true; // login successful
 			state.userInfo = payload;
 			state.userToken = payload.token;
+			// store user's token in local storage
+			localStorage.setItem('userToken', payload.token);
 		},
 		[userLogin.rejected]: (state, { payload }) => {
 			state.loading = false;
@@ -75,6 +77,10 @@ const authSlice = createSlice({
 		[getMe.rejected]: (state, { payload }) => {
 			state.loading = false;
 			state.error = payload;
+			localStorage.removeItem('userToken'); // delete token from storage
+			state.userInfo = null;
+			state.userToken = null;
+			state.success = false;
 		},
 	},
 });
